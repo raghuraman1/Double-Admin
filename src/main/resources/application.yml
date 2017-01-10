@@ -5,4 +5,29 @@ security:
   user:
     role: USER,ADMIN
 server:
-  port: 8082
+  port: 8080
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/persondb
+    username: root
+    password: accion123!@#
+    continueOnError: true
+    initialize: false
+    initialSize: 0
+    timeBetweenEvictionRunsMillis: 5000
+    minEvictableIdleTimeMillis: 5000
+    minIdle: 0
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
+    properties:
+      hibernate:   
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        hbm2ddl:
+          auto: none
+        temp:
+          use_jdbc_metadata_defaults: false
